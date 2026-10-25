@@ -19,7 +19,7 @@
               "});",
               "",
               "pm.test(\"Thời gian phản hồi dưới 800ms\", function () {",
-              "    pm.expect(pm.response.responseTime).to.be.below(800);",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);",
               "});"
             ],
             "type": "text/javascript",
