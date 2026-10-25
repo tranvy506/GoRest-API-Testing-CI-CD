@@ -1,0 +1,26 @@
+name: Production Shift-Right Monitor
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Tự động chạy mỗi giờ
+  workflow_dispatch:     # Cho phép bấm chạy thủ công trên giao diện GitHub
+
+jobs:
+  monitor-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Checkout ma nguon
+        uses: actions/checkout@v4
+
+      - name: 2. Cai dat Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 3. Cai dat cong cu Newman
+        run: npm install -g newman
+
+      - name: 4. Chay kiem tra Health Check
+        run: |
+          newman run gorest_monitor.json \
+            --env-var "token=${{ secrets.GOREST_TOKEN }}"
