@@ -1,0 +1,40 @@
+{
+	"id": "0411675b-a2fa-4ce1-b44f-ba77d568c4f9",
+	"name": "2273404050026_TranThiThanhVy_GoRest_Env",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "userId",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "savedEmail",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "createdEmail",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-10-25T09:05:07.096Z",
+	"_postman_exported_using": "Postman/11.116.0"
+}
