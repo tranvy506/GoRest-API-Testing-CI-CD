@@ -23,4 +23,5 @@ jobs:
       - name: 4. Chay kiem tra Health Check
         run: |
           newman run gorest_monitor.json \
+            --env-var "baseUrl=https://gorest.co.in/public/v2" \
             --env-var "token=${{ secrets.GOREST_TOKEN }}"
