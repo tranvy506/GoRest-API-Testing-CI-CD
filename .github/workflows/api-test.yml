@@ -25,5 +25,5 @@ jobs:
         run: |
           newman run gorest_collection.json \
             -e gorest_environment.json \
-            --env-var "token=${{ secrets.GOREST_TOKEN }}" \
-            -d users.csv
+            --env-var "baseUrl=https://gorest.co.in/public/v2" \
+            --env-var "token=${{ secrets.GOREST_TOKEN }}"
