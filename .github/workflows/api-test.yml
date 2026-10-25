@@ -1,0 +1,29 @@
+name: GoRest API Testing Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  api-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Checkout ma nguon
+        uses: actions/checkout@v4
+
+      - name: 2. Cai dat Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 3. Cai dat cong cu Newman
+        run: npm install -g newman
+
+      - name: 4. Chay kịch ban kiem thu tu dong
+        run: |
+          newman run gorest_collection.json \
+            -e gorest_environment.json \
+            --env-var "token=${{ secrets.GOREST_TOKEN }}" \
+            -d users.csv
